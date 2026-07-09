@@ -509,3 +509,40 @@ transform:translateY(-3px);
 background:#ff2b3c;
 
 }
+.movie-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.movie-card{
+    background:#181818;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.movie-card:hover{
+    transform:translateY(-6px);
+}
+
+.movie-card img{
+    width:100%;
+    display:block;
+}
+
+.movie-info{
+    padding:15px;
+    text-align:center;
+}
+
+.movie-info h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+.movie-info p{
+    color:#bbb;
+    margin:5px 0;
+}
