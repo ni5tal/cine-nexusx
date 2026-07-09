@@ -91,8 +91,3 @@ randomBtn.addEventListener("click", () => {
     movieCards[randomIndex].click();
 
 });
-const randomBtn = document.getElementById("randomBtn");
-
-randomBtn.addEventListener("click", function () {
-    alert("Working!");
-});
