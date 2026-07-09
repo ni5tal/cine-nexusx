@@ -263,3 +263,21 @@ text-align:center;
 }
 
 }
+/* ================= ANIMATIONS ================= */
+
+.hero-content{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1.2s ease;
+}
+
+.movie-card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+.movie-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
