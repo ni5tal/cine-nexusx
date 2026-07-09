@@ -448,3 +448,25 @@ text-align:center;
 #trailerBtn:hover {
   background: #b20710;
 }
+.search-section{
+    display:flex;
+    justify-content:center;
+    margin:40px 20px;
+}
+
+#searchInput{
+    width:100%;
+    max-width:600px;
+    padding:16px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:50px;
+    outline:none;
+    background:#222;
+    color:white;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+#searchInput::placeholder{
+    color:#aaa;
+}
