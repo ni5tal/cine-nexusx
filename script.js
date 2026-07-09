@@ -59,3 +59,41 @@ window.addEventListener("click", (e) => {
   }
 });
 // ===== Live Search =====
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", () => {
+
+    const value = searchInput.value.toLowerCase();
+
+    movieCards.forEach(card => {
+
+        const title = card.dataset.title.toLowerCase();
+        const genre = card.dataset.genre.toLowerCase();
+
+        if (title.includes(value) || genre.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+
+// ===== Surprise Me =====
+
+const randomBtn = document.getElementById("randomBtn");
+
+randomBtn.addEventListener("click", () => {
+
+    const visibleMovies = [...movieCards].filter(card => card.style.display !== "none");
+
+    if (visibleMovies.length === 0) return;
+
+    const randomIndex = Math.floor(Math.random() * visibleMovies.length);
+
+    visibleMovies[randomIndex].click();
+
+});
