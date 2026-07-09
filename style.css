@@ -281,3 +281,81 @@ text-align:center;
     opacity:1;
     transform:translateY(0);
 }
+.hero {
+    height: 70vh;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.9)),
+    url("https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    padding: 40px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #e50914;
+    color: white;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,.2);
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width:768px){
+
+.hero{
+    height:60vh;
+    margin:10px;
+}
+
+.hero-overlay{
+    padding:20px;
+}
+
+.hero h1{
+    font-size:2rem;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+}
