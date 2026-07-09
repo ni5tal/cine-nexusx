@@ -58,3 +58,25 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+// ===== Live Search =====
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", () => {
+
+    const value = searchInput.value.toLowerCase();
+
+    movieCards.forEach(card => {
+
+        const title = card.dataset.title.toLowerCase();
+        const genre = card.dataset.genre.toLowerCase();
+
+        if (title.includes(value) || genre.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
