@@ -449,9 +449,17 @@ text-align:center;
   background: #b20710;
 }
 .search-section{
-    display:flex;
-    justify-content:center;
-    margin:40px 20px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:20px;
+
+margin:40px 20px;
+
 }
 
 #searchInput{
