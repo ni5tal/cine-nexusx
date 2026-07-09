@@ -80,3 +80,14 @@ searchInput.addEventListener("keyup", () => {
     });
 
 });
+// ===== Surprise Me =====
+
+const randomBtn = document.getElementById("randomBtn");
+
+randomBtn.addEventListener("click", () => {
+
+    const randomIndex = Math.floor(Math.random() * movieCards.length);
+
+    movieCards[randomIndex].click();
+
+});
