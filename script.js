@@ -42,7 +42,7 @@ document.getElementById("modalGenre").textContent = genre;
     document.getElementById("modalRating").textContent = rating;
 document.getElementById("modalDescription").textContent = description;
       "A fresh take on Superman, directed by James Gunn.";
-
+document.getElementById("modalPoster").src = poster;
 document.getElementById("trailerBtn").href = trailer;
 
     modal.style.display = "flex";
