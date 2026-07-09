@@ -27,18 +27,23 @@ const movieCards = document.querySelectorAll(".movie-card");
 
 movieCards.forEach(card => {
   card.addEventListener("click", () => {
-    document.getElementById("modalPoster").src =
-      "https://image.tmdb.org/t/p/w500/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg";
+const title = card.dataset.title;
+const year = card.dataset.year;
+const genre = card.dataset.genre;
+const rating = card.dataset.rating;
+const description = card.dataset.description;
+const poster = card.dataset.poster;
+const trailer = card.dataset.trailer;    
 
-    document.getElementById("modalTitle").textContent = "Superman (2025)";
-    document.getElementById("modalYear").textContent = "📅 2025";
-    document.getElementById("modalGenre").textContent = "🎭 Action / Sci-Fi";
-    document.getElementById("modalRating").textContent = "⭐ 9.2 / 10";
-    document.getElementById("modalDescription").textContent =
+
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalYear").textContent = year;
+document.getElementById("modalGenre").textContent = genre;
+    document.getElementById("modalRating").textContent = rating;
+document.getElementById("modalDescription").textContent = description;
       "A fresh take on Superman, directed by James Gunn.";
 
-    document.getElementById("trailerBtn").href =
-      "https://www.youtube.com/results?search_query=Superman+2025+Official+Trailer";
+document.getElementById("trailerBtn").href = trailer;
 
     modal.style.display = "flex";
   });
