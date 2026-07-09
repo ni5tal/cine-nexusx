@@ -1,92 +1,45 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CINE NEXUS | Where Every Movie Finds Its Voice</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<nav class="navbar">
-    <div class="logo">🎬 CINE NEXUS</div>
-
-    <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#trending">Trending</a></li>
-        <li><a href="#topRated">Top Rated</a></li>
-        <li><a href="#hiddenGems">Hidden Gems</a></li>
-    </ul>
-</nav>
-
 <header class="hero">
 
-    <h1>Discover Movies Worth Your Time.</h1>
+    <div class="hero-content">
 
-    <p>
-        Honest reviews, hidden gems and the best movies from
-        Hollywood, Anime, Bollywood and Mollywood.
-    </p>
+        <h1>Discover Movies Worth Watching.</h1>
 
-    <a href="#trending" class="explore-btn">
-        Explore Movies
-    </a>
+        <p>
+            Honest reviews, ratings and hidden gems from Hollywood,
+            Anime, Bollywood and Mollywood.
+        </p>
+
+        <a href="#movieGrid" class="hero-btn">Explore Movies</a>
+
+    </div>
 
 </header>
 
-<section id="trending" class="movie-section">
+<section class="movies-section">
 
-    <div class="section-title">
-        🔥 Trending This Week
-    </div>
+    <h2>🔥 Trending This Week</h2>
 
     <div id="movieGrid" class="movie-grid"></div>
 
 </section>
 
-<section id="topRated" class="movie-section">
+<section class="movies-section">
 
-    <div class="section-title">
-        ⭐ Top Rated
-    </div>
+    <h2>⭐ Top Rated</h2>
 
     <div id="topRatedGrid" class="movie-grid"></div>
 
 </section>
 
-<section id="hiddenGems" class="movie-section">
+<section class="movies-section">
 
-    <div class="section-title">
-        💎 Hidden Gems
-    </div>
+    <h2>💎 Hidden Gems</h2>
 
-    <div id="hiddenGrid" class="movie-grid"></div>
+    <div id="hiddenGemGrid" class="movie-grid"></div>
 
 </section>
 
-<footer>
 
-    <h2>CINE NEXUS</h2>
-
-    <p>
-        Built with ❤️ using TMDB API
-    </p>
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
 
 <!-- ================= NAVBAR ================= -->
 
