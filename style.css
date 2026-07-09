@@ -59,42 +59,144 @@ body{
 }
 
 /* ================= HERO ================= */
-.hero {
-    background: linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.75)
-    ),
-    url("images/interstellar.jpg");
+.hero{
 
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-    min-height: 90vh;
+padding:70px 8%;
+
+background:
+linear-gradient(135deg,#0d0d0d,#1b1b1b);
+
+gap:50px;
+
+min-height:75vh;
+
+overflow:hidden;
+
 }
 
 .hero-content{
-    max-width:800px;
+
+max-width:550px;
+
 }
 
-.welcome{
-    color:#E50914;
-    font-size:20px;
-    margin-bottom:15px;
+.tag{
+
+display:inline-block;
+
+padding:8px 15px;
+
+border-radius:50px;
+
+background:#222;
+
+color:#ff4444;
+
+font-weight:600;
+
+margin-bottom:18px;
+
 }
 
 .hero h1{
-    font-size:64px;
-    line-height:1.1;
+
+font-size:60px;
+
+line-height:1.1;
+
+font-weight:800;
+
+margin-bottom:20px;
+
 }
 
-.description{
+.hero h1 span{
 
-    margin:25px 0;
+color:#ff4444;
 
-    color:#d5d5d5;
+}
 
-    font-size:20px;
+.hero p{
+
+font-size:20px;
+
+color:#bdbdbd;
+
+line-height:1.6;
+
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+background:#e50914;
+
+color:white;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+border:2px solid white;
+
+color:white;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+background:white;
+
+color:black;
+
+}
+
+.hero-image img{
+
+width:340px;
+
+border-radius:20px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.5);
 
 }
 
