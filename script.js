@@ -1,99 +1,133 @@
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-});
+// ==========================
+// CINE NEXUS v2 - SCRIPT.JS
+// ==========================
 
-document.querySelectorAll(".movie-card").forEach(card => {
-    observer.observe(card);
-});
-
-window.addEventListener("load", () => {
-    const hero = document.querySelector(".hero-content");
-
-    if (hero) {
-        hero.style.opacity = "1";
-        hero.style.transform = "translateY(0)";
-    }
-});
-// ===== Movie Modal =====
+const movieGrid = document.getElementById("movieGrid");
+const searchInput = document.getElementById("searchInput");
+const randomBtn = document.getElementById("randomBtn");
 
 const modal = document.getElementById("movieModal");
 const closeBtn = document.querySelector(".close-btn");
 
-const movieCards = document.querySelectorAll(".movie-card");
+const modalPoster = document.getElementById("modalPoster");
+const modalTitle = document.getElementById("modalTitle");
+const modalRating = document.getElementById("modalRating");
+const modalYear = document.getElementById("modalYear");
+const modalDescription = document.getElementById("modalDescription");
+const trailerBtn = document.getElementById("trailerBtn");
 
-movieCards.forEach(card => {
-  card.addEventListener("click", () => {
-const title = card.dataset.title;
-const year = card.dataset.year;
-const genre = card.dataset.genre;
-const rating = card.dataset.rating;
-const description = card.dataset.description;
-const poster = card.dataset.poster;
-const trailer = card.dataset.trailer;    
+// ================= OPEN MODAL =================
 
+document.querySelectorAll(".movie-card").forEach(card=>{
 
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalYear").textContent = year;
-document.getElementById("modalGenre").textContent = genre;
-    document.getElementById("modalRating").textContent = rating;
-document.getElementById("modalDescription").textContent = description;
-      "A fresh take on Superman, directed by James Gunn.";
-document.getElementById("modalPoster").src = poster;
-document.getElementById("trailerBtn").href = trailer;
+card.addEventListener("click",()=>{
 
-    modal.style.display = "flex";
-  });
-});
+modal.style.display="flex";
 
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-// ===== Live Search =====
-
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("keyup", () => {
-
-    const value = searchInput.value.toLowerCase();
-
-    movieCards.forEach(card => {
-
-        const title = card.dataset.title.toLowerCase();
-        const genre = card.dataset.genre.toLowerCase();
-
-        if (title.includes(value) || genre.includes(value)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-
-    });
+modalPoster.src=card.dataset.poster;
+modalTitle.textContent=card.dataset.title;
+modalRating.textContent="⭐ "+card.dataset.rating;
+modalYear.textContent="📅 "+card.dataset.year;
+modalDescription.textContent=card.dataset.description;
+trailerBtn.href=card.dataset.trailer;
 
 });
 
+});
 
-// ===== Surprise Me =====
+// ================= CLOSE =================
 
-const randomBtn = document.getElementById("randomBtn");
+closeBtn.onclick=()=>{
 
-randomBtn.addEventListener("click", () => {
+modal.style.display="none";
 
-    const visibleMovies = [...movieCards].filter(card => card.style.display !== "none");
+};
 
-    if (visibleMovies.length === 0) return;
+window.onclick=(e)=>{
 
-    const randomIndex = Math.floor(Math.random() * visibleMovies.length);
+if(e.target===modal){
 
-    visibleMovies[randomIndex].click();
+modal.style.display="none";
+
+}
+
+};
+
+// ================= SEARCH =================
+
+searchInput.addEventListener("keyup",()=>{
+
+const value=searchInput.value.toLowerCase();
+
+document.querySelectorAll(".movie-card").forEach(card=>{
+
+const title=card.dataset.title.toLowerCase();
+
+card.style.display=
+title.includes(value)
+?
+"block"
+:
+"none";
+
+});
+
+});
+
+// ================= RANDOM MOVIE =================
+
+randomBtn.addEventListener("click",()=>{
+
+const cards=[...document.querySelectorAll(".movie-card")];
+
+const random=
+cards[Math.floor(Math.random()*cards.length)];
+
+random.scrollIntoView({
+
+behavior:"smooth",
+block:"center"
+
+});
+
+random.click();
+
+});
+
+// ================= HERO FADE =================
+
+const hero=document.querySelector(".hero");
+
+window.addEventListener("scroll",()=>{
+
+hero.style.opacity=
+1-window.scrollY/700;
+
+});
+
+// ================= CARD ANIMATION =================
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".movie-card").forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform="translateY(50px)";
+card.style.transition=".7s";
+
+observer.observe(card);
 
 });
