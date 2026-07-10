@@ -600,54 +600,38 @@ margin:40px 20px;
 
 #searchInput{
     width:100%;
-    max-width:600px;
-    padding:16px 25px;
+    max-width:700px;
+    padding:18px 24px;
     font-size:18px;
     border:none;
-    border-radius:50px;
+    border-radius:16px;
     outline:none;
-    background:#222;
-    color:white;
-    box-shadow:0 0 20px rgba(0,0,0,.3);
+    background:#1d1d1d;
+    color:#fff;
+    box-shadow:none;
 }
 
 #searchInput::placeholder{
     color:#aaa;
 }
 #randomBtn{
-
-width:100%;
-
-max-width:600px;
-
-padding:16px;
-
-border:none;
-
-border-radius:50px;
-
-background:#e50914;
-
-color:white;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(229,9,20,.35);
-
+    width:100%;
+    max-width:700px;
+    padding:18px;
+    border:none;
+    border-radius:16px;
+    background:#ff3b3b;
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:none;
 }
 
 #randomBtn:hover{
-
-transform:translateY(-3px);
-
-background:#ff2b3c;
-
+    transform:translateY(-3px);
+    background:#ff5555;
 }
 .movie-grid{
     display:grid;
